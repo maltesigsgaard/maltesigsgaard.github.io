@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- saved from url=(0045)file:///C:/Users/malte/Downloads/index_2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malte Sigsgaard — PhD</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./index_files/css2" rel="stylesheet">
   <style>
     :root {
       --bg:          #F9F8F4;
@@ -35,23 +35,63 @@
     .page {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 4.5rem 0 6rem;
+      padding: 3.5rem 0 6rem;
     }
 
-    /* ── Header ── */
-    header {
-      margin-bottom: 3.5rem;
-      animation: fadeUp .5s ease both;
+    /* ── Hero header ── */
+    .hero {
+      position: relative;
+      background-image: url('phd_defense_picture_2.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+      animation: fadeUp .6s ease both;
     }
 
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(25,25,22,.15) 0%,
+        rgba(25,25,22,.55) 55%,
+        rgba(25,25,22,.88) 100%
+      );
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: var(--max);
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .hero .tagline {
+      color: rgba(255,255,255,.55);
+      margin-bottom: .8rem;
+    }
+
+    .hero .name {
+      color: #fff;
+      margin-bottom: .5rem;
+    }
+
+    .hero .contact-line { color: rgba(255,255,255,.55); }
+    .hero .contact-line a { color: rgba(255,255,255,.85); border-bottom-color: rgba(255,255,255,.2); }
+    .hero .contact-line a:hover { border-bottom-color: rgba(255,255,255,.6); }
+    .hero .dot { color: rgba(255,255,255,.25); }
+
+    /* ── Shared typography ── */
     .tagline {
       font-family: 'DM Mono', monospace;
       font-size: .75rem;
       font-weight: 300;
-      color: var(--muted);
       text-transform: uppercase;
       letter-spacing: .1em;
-      margin-bottom: .8rem;
     }
 
     .name {
@@ -60,22 +100,15 @@
       font-weight: 400;
       line-height: 1.1;
       letter-spacing: -.02em;
-      margin-bottom: .5rem;
     }
 
-    .name em { font-style: italic; font-weight: 300; }
-
-    .contact-line { font-size: .88rem; color: var(--muted); }
+    .contact-line { font-size: .88rem; }
     .contact-line a {
-      color: var(--accent);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color .2s;
     }
-    .contact-line a:hover { border-color: var(--accent); }
-    .dot { margin: 0 .5em; color: var(--rule); }
-
-    /* ── Sections ── */
+    .dot { margin: 0 .5em; }
     section {
       margin-bottom: 3rem;
       animation: fadeUp .5s ease both;
@@ -370,44 +403,6 @@
       line-height: 1.7;
     }
 
-    /* ── Photo strip ── */
-    .photo-strip {
-      margin: 0 0 1.8rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: .5rem;
-    }
-
-    .photo-wrap {
-      overflow: hidden;
-      border-radius: 3px;
-      aspect-ratio: 4/3;
-      background: var(--rule);
-    }
-
-    .photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      transition: transform .4s ease;
-    }
-
-    .photo-wrap:hover img { transform: scale(1.03); }
-
-    .photo-caption {
-      grid-column: 1 / -1;
-      font-family: 'DM Mono', monospace;
-      font-size: .62rem;
-      color: var(--muted);
-      letter-spacing: .06em;
-      text-align: center;
-      margin-top: .1rem !important;
-      margin-bottom: 0 !important;
-    }
-
     /* ── Other writing ── */
     .writing-item {
       padding: .85rem 0;
@@ -484,18 +479,21 @@
   </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- ── HEADER ── -->
-  <header>
-    <p class="tagline">Researcher · Copenhagen</p>
-    <h1 class="name">Malte Sigsgaard, Ph.D.</h1>
-    <p class="contact-line">
-      <a href="mailto:malte.sigsgaard@gmail.com">malte.sigsgaard@gmail.com</a>
-      <span class="dot">·</span>
-      <a href="https://www.linkedin.com/in/malte-sigsgaard/" target="_blank">LinkedIn</a>
-    </p>
+  <!-- ── HERO HEADER ── -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="tagline">Researcher · Copenhagen</p>
+      <h1 class="name">Malte Sigsgaard, Ph.D.</h1>
+      <p class="contact-line">
+        <a href="mailto:malte.sigsgaard@gmail.com">malte.sigsgaard@gmail.com</a>
+        <span class="dot">·</span>
+        <a href="https://www.linkedin.com/in/malte-sigsgaard/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
   </header>
+
+<div class="page">
 
   <!-- ── ABOUT ── -->
   <section>
@@ -512,10 +510,10 @@
     <div class="interests">
       <span class="tag">AI integration in organizations</span>
       <span class="tag">AI ethics</span>
-      <span class="tag">LLM systems & ontologies</span>
+      <span class="tag">LLM systems &amp; ontologies</span>
       <span class="tag">Probabilistic epistemology</span>
-      <span class="tag">Black-boxing & explainability</span>
-      <span class="tag">AI & democracy</span>
+      <span class="tag">Black-boxing &amp; explainability</span>
+      <span class="tag">AI &amp; democracy</span>
     </div>
   </section>
 
@@ -529,22 +527,12 @@
       <p>
         The dissertation takes AI as its object — conceptualizing it as a <em>hyperobject</em>: a phenomenon too large, distributed, and entangled to be grasped from any single vantage point. Because of this, it attacks the problem from three angles, moving through the <strong>normative</strong> (what ethical frameworks are we using?), the <strong>experiential</strong> (what do journalists actually go through?), and the <strong>discursive</strong> (how does language in law and policy shape what AI gets to do?) — arguing that meaningful control requires borrowing from fields usually kept apart: philosophy, organizational theory, medicine, and jurisprudence.
       </p>
-      <button class="video-btn" onclick="document.getElementById('videoModal').classList.add('open')">
+      <button class="video-btn" onclick="document.getElementById(&#39;videoModal&#39;).classList.add(&#39;open&#39;)">
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="3,1 12,6.5 3,12" fill="currentColor"/>
+          <polygon points="3,1 12,6.5 3,12" fill="currentColor"></polygon>
         </svg>
         Watch project summary (danish language)
       </button>
-    </div>
-
-    <div class="photo-strip">
-      <div class="photo-wrap">
-        <img src="phd_defense_picture.jpg" alt="PhD defence — University of Southern Denmark, September 2025" />
-      </div>
-      <div class="photo-wrap">
-        <img src="phd_defense_picture_2.jpg" alt="PhD defence — University of Southern Denmark, September 2025" />
-      </div>
-      <p class="photo-caption">PhD Defence · University of Southern Denmark · September 2025</p>
     </div>
 
     <p class="sub-label">Papers</p>
@@ -707,20 +695,17 @@
 </div><!-- /page -->
 
 <!-- ── VIDEO MODAL ── -->
-<div class="modal-overlay" id="videoModal" onclick="if(event.target===this)this.classList.remove('open')">
+<div class="modal-overlay" id="videoModal" onclick="if(event.target===this)this.classList.remove(&#39;open&#39;)">
   <div class="modal-box">
     <div class="modal-header">
       <span class="modal-label">AI in the Newsroom — Project Summary</span>
       <div style="display:flex;align-items:center;gap:.7rem;">
         <span class="modal-lang">🇩🇰 In Danish</span>
-        <button class="modal-close" onclick="document.getElementById('videoModal').classList.remove('open')" aria-label="Close">×</button>
+        <button class="modal-close" onclick="document.getElementById(&#39;videoModal&#39;).classList.remove(&#39;open&#39;)" aria-label="Close">×</button>
       </div>
     </div>
     <div class="modal-iframe-wrap">
-      <iframe
-        src="https://app.frame.io/presentations/e90d8706-8ac4-4842-a2ab-7573a62c0c3b"
-        allow="autoplay; fullscreen"
-        allowfullscreen>
+      <iframe src="./index_files/e90d8706-8ac4-4842-a2ab-7573a62c0c3b.html" allow="autoplay; fullscreen" allowfullscreen="">
       </iframe>
     </div>
   </div>
@@ -734,5 +719,6 @@
   });
 </script>
 
-</body>
-</html>
+
+
+</body></html>
