@@ -370,6 +370,44 @@
       line-height: 1.7;
     }
 
+    /* ── Photo strip ── */
+    .photo-strip {
+      margin: 0 0 1.8rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: .5rem;
+    }
+
+    .photo-wrap {
+      overflow: hidden;
+      border-radius: 3px;
+      aspect-ratio: 4/3;
+      background: var(--rule);
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform .4s ease;
+    }
+
+    .photo-wrap:hover img { transform: scale(1.03); }
+
+    .photo-caption {
+      grid-column: 1 / -1;
+      font-family: 'DM Mono', monospace;
+      font-size: .62rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+      text-align: center;
+      margin-top: .1rem !important;
+      margin-bottom: 0 !important;
+    }
+
     /* ── Other writing ── */
     .writing-item {
       padding: .85rem 0;
@@ -497,6 +535,16 @@
         </svg>
         Watch project summary (danish language)
       </button>
+    </div>
+
+    <div class="photo-strip">
+      <div class="photo-wrap">
+        <img src="phd_defense_picture.jpg" alt="PhD defence — University of Southern Denmark, September 2025" />
+      </div>
+      <div class="photo-wrap">
+        <img src="phd_defense_picture_2.jpg" alt="PhD defence — University of Southern Denmark, September 2025" />
+      </div>
+      <p class="photo-caption">PhD Defence · University of Southern Denmark · September 2025</p>
     </div>
 
     <p class="sub-label">Papers</p>
