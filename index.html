@@ -1,89 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Malte Sigsgaard — PhD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:          #F9F8F4;
-      --ink:         #191916;
-      --muted:       #6A6A62;
-      --accent:      #2B5C48;
-      --accent-light:#E6F0EB;
-      --rule:        #D8D6CE;
-      --max:         680px;
+      --bg:           #F9F8F4;
+      --ink:          #191916;
+      --muted:        #6A6A62;
+      --accent:       #2B5C48;
+      --accent-light: #E6F0EB;
+      --rule:         #D8D6CE;
+      --max:          700px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { font-size: 17px; scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--ink);
       font-family: 'Source Serif 4', Georgia, serif;
       font-weight: 300;
       line-height: 1.75;
-      padding: 0 1.25rem;
       -webkit-font-smoothing: antialiased;
     }
-
-    .page {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 3.5rem 0 6rem;
-    }
-
-    /* ── Hero header ── */
-    .hero {
-      position: relative;
-      background-image: url('phd_defense_picture_2.jpg');
-      background-size: cover;
-      background-position: center 35%;
-      min-height: 480px;
-      display: flex;
-      align-items: flex-end;
-      animation: fadeUp .6s ease both;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(25,25,22,.15) 0%,
-        rgba(25,25,22,.55) 55%,
-        rgba(25,25,22,.88) 100%
-      );
-    }
-
-    .hero-inner {
-      position: relative;
-      max-width: var(--max);
-      width: 100%;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 3rem;
-    }
-
-    .hero .tagline {
-      color: rgba(255,255,255,.55);
-      margin-bottom: .8rem;
-    }
-
-    .hero .name {
-      color: #fff;
-      margin-bottom: .5rem;
-    }
-
-    .hero .contact-line { color: rgba(255,255,255,.55); }
-    .hero .contact-line a { color: rgba(255,255,255,.85); border-bottom-color: rgba(255,255,255,.2); }
-    .hero .contact-line a:hover { border-bottom-color: rgba(255,255,255,.6); }
-    .hero .dot { color: rgba(255,255,255,.25); }
 
     /* ── Shared typography ── */
     .tagline {
@@ -93,7 +37,6 @@
       text-transform: uppercase;
       letter-spacing: .1em;
     }
-
     .name {
       font-family: 'Fraunces', serif;
       font-size: clamp(2.4rem, 6vw, 3.4rem);
@@ -101,60 +44,114 @@
       line-height: 1.1;
       letter-spacing: -.02em;
     }
-
     .contact-line { font-size: .88rem; }
-    .contact-line a {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color .2s;
-    }
+    .contact-line a { text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
     .dot { margin: 0 .5em; }
-    section {
-      margin-bottom: 3rem;
-      animation: fadeUp .5s ease both;
-    }
-    section:nth-child(2) { animation-delay: .07s; }
-    section:nth-child(3) { animation-delay: .13s; }
-    section:nth-child(4) { animation-delay: .18s; }
-    section:nth-child(5) { animation-delay: .23s; }
-    section:nth-child(6) { animation-delay: .28s; }
-    section:nth-child(7) { animation-delay: .32s; }
 
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      background-image: url('phd_defense_picture_2.jpg');
+      background-size: cover;
+      background-position: center 35%;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(25,25,22,.15) 0%, rgba(25,25,22,.55) 55%, rgba(25,25,22,.88) 100%);
+    }
+    .hero-inner {
+      position: relative;
+      max-width: var(--max);
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 2.75rem;
+    }
+    .hero .tagline  { color: rgba(255,255,255,.55); margin-bottom: .8rem; }
+    .hero .name     { color: #fff; margin-bottom: .5rem; }
+    .hero .contact-line { color: rgba(255,255,255,.55); }
+    .hero .contact-line a   { color: rgba(255,255,255,.85); border-bottom-color: rgba(255,255,255,.2); }
+    .hero .contact-line a:hover { border-bottom-color: rgba(255,255,255,.6); }
+    .hero .dot { color: rgba(255,255,255,.25); }
+
+    /* ── Tab nav ── */
+    .tab-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      padding: 0 1.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tab-nav::-webkit-scrollbar { display: none; }
+
+    .tab-nav-inner {
+      display: flex;
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .tab-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: .85rem 1.1rem .85rem 0;
+      margin-right: 1.4rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+    .tab-btn:last-child { margin-right: 0; }
+    .tab-btn:hover  { color: var(--ink); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Tab panels ── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeUp .3s ease both; }
+
+    /* ── Page content wrapper ── */
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.75rem 1.25rem 5rem;
+    }
+
+    section { margin-bottom: 2.5rem; }
+
+    /* ── Section labels ── */
     .section-label {
       font-family: 'DM Mono', monospace;
       font-size: .68rem;
-      font-weight: 400;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: .14em;
-      margin-bottom: 1rem;
+      margin-bottom: .9rem;
       display: flex;
       align-items: center;
       gap: .6rem;
     }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
-    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
 
-    h2 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.25;
-      margin-bottom: .6rem;
-      letter-spacing: -.015em;
-    }
-
-    h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      letter-spacing: -.01em;
-      line-height: 1.35;
-      margin-bottom: .3rem;
+    .sub-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .7rem;
     }
 
     p { margin-bottom: 1rem; }
@@ -169,15 +166,10 @@
     a:hover { border-color: var(--accent); }
 
     /* ── Interest tags ── */
-    .interests {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-      margin-top: 1.1rem;
-    }
+    .interests { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
     .tag {
       font-family: 'DM Mono', monospace;
-      font-size: .68rem;
+      font-size: .66rem;
       color: var(--accent);
       background: var(--accent-light);
       padding: .2em .65em;
@@ -185,55 +177,305 @@
       letter-spacing: .04em;
     }
 
+    /* ── Talks CTA ── */
+    .talks-cta {
+      margin-top: 2rem;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .talks-cta-text .talks-heading {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .35rem;
+    }
+    .talks-cta-text p {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    .talks-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-bottom: none;
+      padding: .55em 1.1em;
+      border-radius: 2px;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      flex-shrink: 0;
+      align-self: center;
+      transition: opacity .2s;
+    }
+    .talks-btn:hover { opacity: .85; border-bottom: none; }
+
     /* ── Dissertation card ── */
     .diss-card {
       border-left: 2px solid var(--accent);
-      padding: 1.1rem 1.25rem 1.1rem 1.4rem;
+      padding: 1rem 1.2rem 1rem 1.35rem;
       background: var(--accent-light);
       margin-bottom: 1.6rem;
       border-radius: 0 3px 3px 0;
     }
     .diss-title {
       font-family: 'Fraunces', serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-style: italic;
       font-weight: 400;
       line-height: 1.3;
-      margin-bottom: .3rem;
+      margin-bottom: .25rem;
     }
     .diss-meta {
       font-family: 'DM Mono', monospace;
-      font-size: .68rem;
+      font-size: .65rem;
       color: var(--muted);
       letter-spacing: .04em;
-      margin-bottom: .7rem;
+      margin-bottom: .65rem;
     }
 
     /* ── Video button ── */
     .video-btn {
       display: inline-flex;
       align-items: center;
-      gap: .45rem;
-      margin-top: .9rem;
+      gap: .4rem;
+      margin-top: .75rem;
       font-family: 'DM Mono', monospace;
-      font-size: .7rem;
+      font-size: .68rem;
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--accent);
       background: #fff;
       border: 1px solid var(--accent);
       border-bottom: 1px solid var(--accent);
-      padding: .4em .9em;
+      padding: .38em .85em;
       border-radius: 2px;
       cursor: pointer;
       transition: background .2s, color .2s;
     }
-    .video-btn:hover {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
+    .video-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── Papers (compact) ── */
+    .paper-list { list-style: none; }
+    .paper-item {
+      padding: .8rem 0;
+      border-bottom: 1px solid var(--rule);
     }
-    .video-btn svg { flex-shrink: 0; }
+    .paper-item:last-child { border-bottom: none; }
+    .paper-num {
+      font-family: 'DM Mono', monospace;
+      font-size: .62rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+      margin-bottom: .15rem;
+    }
+    .paper-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: .2rem;
+      letter-spacing: -.01em;
+    }
+    .paper-status {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: .58rem;
+      padding: .1em .5em;
+      border-radius: 2px;
+      margin-left: .35rem;
+      vertical-align: middle;
+      letter-spacing: .04em;
+      position: relative;
+      top: -1px;
+      white-space: nowrap;
+    }
+    .paper-status.published { color: #fff; background: var(--accent); }
+    .paper-status.review    { color: var(--accent); border: 1px solid var(--accent); }
+    .paper-status.diss      { color: var(--muted); border: 1px solid var(--rule); }
+    .paper-ref {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
+      font-size: .66rem;
+      letter-spacing: .07em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-top: .55rem;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: '▸'; font-size: .65rem; transition: transform .2s; }
+    details[open] summary::before { transform: rotate(90deg); }
+
+    .paper-abstract {
+      font-size: .87rem;
+      color: var(--muted);
+      margin-top: .5rem;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* ── Work entries ── */
+    .entry-list { list-style: none; }
+    .entry {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 0 1.25rem;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .entry:last-child { border-bottom: none; }
+    .entry-year {
+      font-family: 'DM Mono', monospace;
+      font-size: .67rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+      padding-top: .1rem;
+      line-height: 1.5;
+    }
+    .entry-role  { font-weight: 400; font-size: .97rem; margin-bottom: .1rem; }
+    .entry-where { font-size: .83rem; color: var(--muted); margin-bottom: .25rem; }
+    .entry-detail { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: 0; }
+
+    /* ── Other writing ── */
+    .writing-item {
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .writing-item:last-child { border-bottom: none; }
+    .writing-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: .63rem;
+      color: var(--muted);
+      letter-spacing: .05em;
+      margin-bottom: .2rem;
+    }
+    .writing-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: .2rem;
+    }
+
+    /* ── Reading list ── */
+    .reading-list { list-style: none; }
+    .reading-item {
+      display: flex;
+      align-items: baseline;
+      gap: .85rem;
+      padding: .65rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .reading-item:last-child { border-bottom: none; }
+    .reading-type {
+      font-family: 'DM Mono', monospace;
+      font-size: .57rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: .15em .5em;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .reading-title { font-size: .93rem; line-height: 1.4; margin-bottom: .12rem; }
+    .reading-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: .63rem;
+      color: var(--muted);
+      letter-spacing: .03em;
+      margin-bottom: 0;
+    }
+
+    /* ── Contact form ── */
+    .contact-form { display: flex; flex-direction: column; gap: .9rem; }
+
+    .form-row { display: flex; flex-direction: column; gap: .3rem; }
+
+    .form-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .66rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-input {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: .93rem;
+      font-weight: 300;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: .55em .75em;
+      width: 100%;
+      transition: border-color .2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-input:focus { border-color: var(--accent); }
+    .form-input::placeholder { color: var(--rule); }
+
+    .form-textarea { resize: vertical; min-height: 120px; }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .form-confirm {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem;
+      color: var(--accent);
+      letter-spacing: .05em;
+      display: none;
+      margin-bottom: 0;
+    }
+    .form-confirm.visible { display: block; }
+
+    /* ── Contact grid ── */
+    .contact-grid { display: flex; flex-direction: column; gap: .5rem; }
+    .contact-item { display: flex; align-items: baseline; gap: .7rem; font-size: .92rem; }
+    .contact-key {
+      font-family: 'DM Mono', monospace;
+      font-size: .66rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      min-width: 4.5rem;
+    }
 
     /* ── Modal ── */
     .modal-overlay {
@@ -248,7 +490,6 @@
       backdrop-filter: blur(4px);
     }
     .modal-overlay.open { display: flex; }
-
     .modal-box {
       background: var(--ink);
       border-radius: 4px;
@@ -259,26 +500,23 @@
       box-shadow: 0 24px 64px rgba(0,0,0,.45);
       animation: modalIn .25s ease both;
     }
-
     .modal-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: .7rem 1rem;
+      padding: .65rem 1rem;
       background: #111110;
     }
-
     .modal-label {
       font-family: 'DM Mono', monospace;
-      font-size: .65rem;
+      font-size: .63rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: #888880;
     }
-
     .modal-lang {
       font-family: 'DM Mono', monospace;
-      font-size: .62rem;
+      font-size: .6rem;
       letter-spacing: .08em;
       color: #C8A04A;
       background: rgba(200,160,74,.12);
@@ -286,7 +524,6 @@
       border-radius: 2px;
       border: 1px solid rgba(200,160,74,.3);
     }
-
     .modal-close {
       background: none;
       border: none;
@@ -299,11 +536,7 @@
       transition: color .15s;
     }
     .modal-close:hover { color: #fff; }
-
-    .modal-iframe-wrap {
-      position: relative;
-      padding-top: 56.25%;
-    }
+    .modal-iframe-wrap { position: relative; padding-top: 56.25%; }
     .modal-iframe-wrap iframe {
       position: absolute;
       inset: 0;
@@ -312,387 +545,322 @@
       border: none;
     }
 
+    /* ── Footer ── */
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem 3rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: .63rem;
+      color: var(--rule);
+      letter-spacing: .06em;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
     @keyframes modalIn {
       from { opacity: 0; transform: scale(.96) translateY(8px); }
       to   { opacity: 1; transform: scale(1) translateY(0); }
     }
 
-    /* ── Papers ── */
-    .sub-label {
-      font-family: 'DM Mono', monospace;
-      font-size: .68rem;
-      font-weight: 300;
-      letter-spacing: .08em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .paper-list { list-style: none; }
-    .paper-item {
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .paper-item:last-child { border-bottom: none; }
-
-    .paper-num {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      color: var(--muted);
-      letter-spacing: .06em;
-      margin-bottom: .2rem;
-    }
-
-    .paper-status {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: .6rem;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: .1em .5em;
-      border-radius: 2px;
-      margin-left: .4rem;
-      vertical-align: middle;
-      letter-spacing: .04em;
-      position: relative;
-      top: -1px;
-      white-space: nowrap;
-    }
-    .paper-status.published {
-      color: #fff;
-      background: var(--accent);
-    }
-    .paper-status.diss {
-      color: var(--muted);
-      border-color: var(--rule);
-    }
-
-    .paper-ref {
-      font-size: .85rem;
-      color: var(--muted);
-      margin-top: .3rem;
-      line-height: 1.6;
-    }
-
-    details summary {
-      cursor: pointer;
-      font-family: 'DM Mono', monospace;
-      font-size: .68rem;
-      letter-spacing: .06em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-top: .6rem;
-      user-select: none;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: .4rem;
-    }
-    details summary::-webkit-details-marker { display: none; }
-    details summary::before {
-      content: '▸';
-      font-size: .7rem;
-      transition: transform .2s;
-    }
-    details[open] summary::before { transform: rotate(90deg); }
-
-    .paper-abstract {
-      font-size: .88rem;
-      color: var(--muted);
-      margin-top: .5rem;
-      line-height: 1.7;
-    }
-
-    /* ── Other writing ── */
-    .writing-item {
-      padding: .85rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .writing-item:last-child { border-bottom: none; }
-
-    .writing-meta {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      color: var(--muted);
-      letter-spacing: .05em;
-      margin-bottom: .2rem;
-    }
-
-    /* ── Experience ── */
-    .entry-list { list-style: none; }
-    .entry {
-      display: grid;
-      grid-template-columns: 7.5rem 1fr;
-      gap: 0 1.5rem;
-      padding: .85rem 0;
-      border-bottom: 1px solid var(--rule);
-      align-items: start;
-    }
-    .entry:last-child { border-bottom: none; }
-
-    .entry-year {
-      font-family: 'DM Mono', monospace;
-      font-size: .7rem;
-      color: var(--muted);
-      letter-spacing: .04em;
-      padding-top: .12rem;
-      line-height: 1.6;
-    }
-    .entry-role { font-weight: 400; margin-bottom: .15rem; }
-    .entry-where { font-size: .85rem; color: var(--muted); margin-bottom: .35rem; }
-    .entry-detail { font-size: .88rem; color: var(--muted); line-height: 1.65; }
-
-    /* ── Contact ── */
-    .contact-grid { display: flex; flex-direction: column; gap: .5rem; }
-    .contact-item { display: flex; align-items: flex-start; gap: .7rem; font-size: .92rem; }
-    .contact-key {
-      font-family: 'DM Mono', monospace;
-      font-size: .68rem;
-      color: var(--muted);
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      min-width: 4.5rem;
-      padding-top: .18rem;
-    }
-
-    /* ── Footer ── */
-    footer {
-      margin-top: 5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--rule);
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      color: var(--rule);
-      letter-spacing: .06em;
-      text-align: center;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
+    /* ── Mobile ── */
     @media (max-width: 520px) {
-      .entry { grid-template-columns: 1fr; gap: .2rem 0; }
-      .entry-year { font-size: .65rem; }
+      .entry { grid-template-columns: 1fr; gap: .15rem 0; }
+      .entry-year { font-size: .63rem; }
+      .talks-cta { flex-direction: column; gap: .9rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── HERO HEADER ── -->
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="tagline">Researcher · Copenhagen</p>
-      <h1 class="name">Malte Sigsgaard, Ph.D.</h1>
-      <p class="contact-line">
-        <a href="mailto:malte.sigsgaard@gmail.com">malte.sigsgaard@gmail.com</a>
-        <span class="dot">·</span>
-        <a href="https://www.linkedin.com/in/malte-sigsgaard/" target="_blank">LinkedIn</a>
-      </p>
-    </div>
-  </header>
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="tagline">Researcher · Copenhagen</p>
+    <h1 class="name">Malte Sigsgaard, Ph.D.</h1>
+  </div>
+</header>
 
+<!-- ── TAB NAV ── -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="about">About</button>
+    <button class="tab-btn" data-tab="research">Research</button>
+    <button class="tab-btn" data-tab="work">Work</button>
+    <button class="tab-btn" data-tab="reading">Reading</button>
+    <button class="tab-btn" data-tab="contact">Contact</button>
+  </div>
+</nav>
+
+<!-- ── CONTENT ── -->
 <div class="page">
 
-  <!-- ── ABOUT ── -->
-  <section>
-    <p class="section-label">About</p>
-    <p>
-      I am a recently defended Ph.D. from the <a href="https://www.sdu.dk/en/forskning/forskningsenheder/samf/digitaldemocracycentre" target="_blank">Digital Democracy Centre</a> at the University of Southern Denmark, where I worked at the intersection of philosophy, computer science, media studies, and organizational theory. I am currently looking for my next position, and writing and advising independently in the meantime.
-    </p>
-    <p>
-      My research focuses on what happens when AI meets organizations and policy — and who gets to stay in control. I spent three years embedded in Danish newsrooms, working with TV2, JFM, and TV2 Fyn on AI implementation strategy and co-developing a lead-generation tool now in active use across all three organizations. Before that, I advised Ekstra Bladet on the ethics of their ML systems and worked on AI didactics research at the University of Copenhagen.
-    </p>
-    <p>
-      My academic background is in philosophy, where I developed Bayesian models for ethics and decision theory and worked on explainability in neural networks alongside researchers from computer science, medicine, and law.
-    </p>
-    <div class="interests">
-      <span class="tag">AI integration in organizations</span>
-      <span class="tag">AI ethics</span>
-      <span class="tag">LLM systems & ontologies</span>
-      <span class="tag">Probabilistic epistemology</span>
-      <span class="tag">Black-boxing & explainability</span>
-      <span class="tag">AI & democracy</span>
-    </div>
-  </section>
+  <!-- ══ ABOUT ══ -->
+  <div id="tab-about" class="tab-panel active">
 
-  <!-- ── RESEARCH ── -->
-  <section>
-    <p class="section-label">Research</p>
-
-    <div class="diss-card">
-      <p class="diss-title">"Staying in CTRL": Mapping the Impacts of AI on Journalism and Normative Strategies of AI Control</p>
-      <p class="diss-meta">Ph.D. Dissertation · Defended 29 September 2025 · University of Southern Denmark<br>Supervisors: Morten Skovsgaard &amp; Claes de Vreese</p>
+    <section>
+      <p class="section-label">About</p>
       <p>
-        The dissertation takes AI as its object — conceptualizing it as a <em>hyperobject</em>: a phenomenon too large, distributed, and entangled to be grasped from any single vantage point. Because of this, it attacks the problem from three angles, moving through the <strong>normative</strong> (what ethical frameworks are we using?), the <strong>experiential</strong> (what do journalists actually go through?), and the <strong>discursive</strong> (how does language in law and policy shape what AI gets to do?) — arguing that meaningful control requires borrowing from fields usually kept apart: philosophy, organizational theory, medicine, and jurisprudence.
+        I'm a researcher and independent advisor working at the intersection of AI, organizations, and policy. I recently defended my Ph.D., and I'm currently available for research collaborations, advisory work, and speaking engagements.
       </p>
-      <button class="video-btn" onclick="document.getElementById('videoModal').classList.add('open')">
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="3,1 12,6.5 3,12" fill="currentColor"/>
-        </svg>
-        Watch project summary (danish language)
-      </button>
-    </div>
-
-    <p class="sub-label">Papers</p>
-
-    <ul class="paper-list">
-
-      <li class="paper-item">
-        <p class="paper-num">Paper I</p>
-        <h3>Striking the (im)balance <span class="paper-status published">Published</span></h3>
-        <p class="paper-ref">
-          Sigsgaard, M. E. (2024). Striking the (im)balance – a review of the relative prevalence of meta-ethical models in AI journalism research. <em>Journalism</em>. <a href="https://doi.org/10.1177/14648849241303718" target="_blank">doi:10.1177/14648849241303718</a>
-        </p>
-        <details>
-          <summary>Abstract</summary>
-          <p class="paper-abstract">
-            A systematic review of the ethical assumptions at work in AI journalism research. The paper finds that the field skews heavily toward negative-utilitarian approaches — focused on identifying and mitigating current harms — while deontological and virtue-ethical perspectives are rarely employed. The consequence is that first-order normative goals often go unstated, making it difficult to move from reactive harm-mitigation to proactive demands on AI developers. The paper argues that drawing on a wider range of ethical models would lead to better technology, better research, and better journalistic practice.
-          </p>
-        </details>
-      </li>
-
-      <li class="paper-item">
-        <p class="paper-num">Paper II</p>
-        <h3>Preparing Journalism for Robots: AI Integration through Role Clarity <span class="paper-status">In review</span></h3>
-        <p class="paper-ref">
-          Sigsgaard, M. (in review). Preparing Journalism for Robots: AI Integration through Role Clarity.
-        </p>
-        <details>
-          <summary>Abstract</summary>
-          <p class="paper-abstract">
-            Based on fifteen in-depth interviews with employees at TV2, TV2 Fyn, and Jysk Fynske Medier conducted in 2022 — the year ChatGPT launched — this paper examines how AI integration impacts role clarity in newsrooms. Borrowing a phenomenological-hermeneutic methodology from medical research on patients adapting to assistive technology, it traces how role ambiguity emerges from unclear hierarchical relationships to AI systems, improvised learning, and disconnects between stated AI strategies and lived experience. Role clarity — the degree to which job expectations are clearly understood — proves a more tractable and empirically useful lens for studying AI integration than the journalistic identity frameworks that typically dominate the field.
-          </p>
-        </details>
-      </li>
-
-      <li class="paper-item">
-        <p class="paper-num">Paper III</p>
-        <h3>Moral "Actors" and "Responsible AI" <span class="paper-status diss">Dissertation paper</span></h3>
-        <p class="paper-ref">
-          Sigsgaard, M. (2025). Moral "Actors" and "Responsible AI": How Linguistic Attribution of Human Abilities and Legal Rights to AI Creates a "Techno-Rights Gap". In <em>Staying in CTRL</em>. University of Southern Denmark.
-        </p>
-        <details>
-          <summary>Abstract</summary>
-          <p class="paper-abstract">
-            This paper examines how language in AI policy and law — "responsible AI," "trustworthy AI," AI that "reads" and "learns" — constitutes a series of category mistakes with practical legal consequences. When moral agency is attributed to automated systems, a responsibility gap emerges: something went wrong, it was caused by technology, there is a legitimate demand for accountability, but the technology is not a legitimate target. Meanwhile, AI companies use the same anthropomorphizing language to claim quasi-rights for their systems in copyright disputes, arguing that their models "learn" and are "inspired" just as humans are. The paper coins the term <em>techno-rights gap</em> to describe how AI can be granted rights-adjacent status while its owners evade corresponding obligations — and argues that legislators must pre-empt rather than react if democratic governance is to meaningfully shape AI development.
-          </p>
-        </details>
-      </li>
-
-    </ul>
-  </section>
-
-  <!-- ── OTHER WRITING ── -->
-  <section>
-    <p class="section-label">Other Writing</p>
-    <div class="writing-item">
-      <p class="writing-meta">Folkeskolen · May 2020 · Opinion / Research call · In Danish</p>
-      <h3><a href="https://www.folkeskolen.dk/debat/undervisning-i-coronaens-tid/" target="_blank">"Undervisning i Coronaens Tid"</a></h3>
-      <p style="font-size:.88rem; color:var(--muted); margin-top:.35rem;">
-        A call for participation in a national teacher survey on remote teaching during the COVID-19 pandemic. Co-authored with researchers from the University of Copenhagen, Aalborg University, SDU, Via University College, and KP. Published in <em>Folkeskolen</em>, the primary professional journal for Danish primary school teachers.
+      <p>
+        For the past several years I've been studying what happens when AI meets organizations and policy from the inside — spending three years embedded in Danish newsrooms, working with TV2, JFM, and TV2 Fyn on AI implementation and co-developing a lead-generation tool now in active use across all three. I also advise news producers on the ethics of ML systems, and have contributed to research on AI didactics at the University of Copenhagen.
       </p>
-    </div>
-  </section>
-
-  <!-- ── EXPERIENCE ── -->
-  <section>
-    <p class="section-label">Experience</p>
-    <ul class="entry-list">
-
-      <li class="entry">
-        <span class="entry-year">2022–2025</span>
-        <div>
-          <p class="entry-role">Ph.D. Fellow</p>
-          <p class="entry-where">Digital Democracy Centre · University of Southern Denmark</p>
-          <p class="entry-detail">
-            Embedded research with TV2, JFM, and TV2 Fyn on AI implementation strategy, including stakeholder interviews and organizational analysis. Co-developed a lead-generation tool that uses AI summaries of municipal communications to pitch story ideas to journalists — now in active use across all three newsrooms. Co-organized SDU's 2024 Politics Week. Developed and administered the entrance exam for Denmark's only university journalism degree. Taught Political Science to first-year Bachelor's students and acted as external examiner in sociology and journalism.
-          </p>
-        </div>
-      </li>
-
-      <li class="entry">
-        <span class="entry-year">2021</span>
-        <div>
-          <p class="entry-role">AI Ethics Consultant</p>
-          <p class="entry-where">Platform Intelligence in News · Danish Innovation Fund &amp; Ekstra Bladet</p>
-          <p class="entry-detail">
-            Developed ethical guidelines and empirical compliance criteria for AI and ML systems at Ekstra Bladet's online platform. Produced implementation strategies for recommender systems, NLP tools (topic classification, sentiment analysis), question answering, and abstract generation technologies.
-          </p>
-        </div>
-      </li>
-
-      <li class="entry">
-        <span class="entry-year">2020</span>
-        <div>
-          <p class="entry-role">AI Research Assistant</p>
-          <p class="entry-where">Centre for Digital Education · University of Copenhagen</p>
-          <p class="entry-detail">
-            Developed a research strategy for an isolated didactics of AI in direct collaboration with the head of the Centre. Played a central coordination role in the Danish Digital-Didactical Education (3DU) research project across IND/SCIENCE, DPU/AAU, and DKMAT.
-          </p>
-        </div>
-      </li>
-
-    </ul>
-  </section>
-
-  <!-- ── EDUCATION ── -->
-  <section>
-    <p class="section-label">Education</p>
-    <ul class="entry-list">
-
-      <li class="entry">
-        <span class="entry-year">2022–2025</span>
-        <div>
-          <p class="entry-role">Ph.D. in AI</p>
-          <p class="entry-where">Digital Democracy Centre · University of Southern Denmark</p>
-        </div>
-      </li>
-
-      <li class="entry">
-        <span class="entry-year">2017–2019</span>
-        <div>
-          <p class="entry-role">M.A. in Philosophy</p>
-          <p class="entry-where">University of Copenhagen</p>
-          <p class="entry-detail">Bayesian modelling for ethics and decision theory. Research into risk assessment and evidential hierarchies in policy. Associated with the research group on Theoretical Philosophy, AI, and Explainability — working with researchers from computer science, data science, and law on neural network interpretability.</p>
-        </div>
-      </li>
-
-      <li class="entry">
-        <span class="entry-year">2014–2017</span>
-        <div>
-          <p class="entry-role">B.A. in Philosophy</p>
-          <p class="entry-where">University of Copenhagen &amp; Copenhagen Business School</p>
-          <p class="entry-detail">Electives in digital media strategy, economic decision theory, and data-driven communication.</p>
-        </div>
-      </li>
-
-    </ul>
-  </section>
-
-  <!-- ── CONTACT ── -->
-  <section>
-    <p class="section-label">Contact</p>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <span class="contact-key">Email</span>
-        <a href="mailto:malte.sigsgaard@gmail.com">malte.sigsgaard@gmail.com</a>
+      <p>
+        I first came to AI through philosophy — specifically through the research group on Theoretical Philosophy at the University of Copenhagen, where I worked alongside researchers from computer science, data science, and law on explainability in neural networks. That grounding has stayed with me: most of what I do now involves translating between the technical, the ethical, and the organizational.
+      </p>
+      <div class="interests">
+        <span class="tag">AI integration in organizations</span>
+        <span class="tag">AI ethics</span>
+        <span class="tag">LLM systems & ontologies</span>
+        <span class="tag">Probabilistic epistemology</span>
+        <span class="tag">Black-boxing & explainability</span>
+        <span class="tag">AI & democracy</span>
       </div>
-      <div class="contact-item">
-        <span class="contact-key">LinkedIn</span>
-        <a href="https://www.linkedin.com/in/malte-sigsgaard/" target="_blank">linkedin.com/in/malte-sigsgaard</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-key">Location</span>
-        <span>Copenhagen, Denmark</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>Malte Sigsgaard · Updated June 2026</footer>
+  </div><!-- /about -->
+
+  <!-- ══ RESEARCH ══ -->
+  <div id="tab-research" class="tab-panel">
+
+    <section>
+      <p class="section-label">Dissertation</p>
+      <div class="diss-card">
+        <p class="diss-title">"Staying in CTRL": Mapping the Impacts of AI on Journalism and Normative Strategies of AI Control</p>
+        <p class="diss-meta">Ph.D. Dissertation · Defended 29 September 2025 · University of Southern Denmark<br>Supervisors: Morten Skovsgaard &amp; Claes de Vreese</p>
+        <p>
+          The dissertation conceptualizes AI as a <em>hyperobject</em> — too large, distributed, and entangled to be grasped from any single vantage point. Through three papers it investigates the <strong>normative</strong> (which ethical frameworks are we using?), the <strong>experiential</strong> (how do we work with AI?), and the <strong>discursive</strong> (how does language in law and policy shape what AI gets to do?) — arguing that meaningful control requires borrowing from philosophy, organizational theory, medicine, and jurisprudence.
+        </p>
+        <button class="video-btn" onclick="document.getElementById('videoModal').classList.add('open')">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><polygon points="2,1 10,5.5 2,10" fill="currentColor"/></svg>
+          Watch project summary (danish language)
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">Papers</p>
+      <ul class="paper-list">
+
+        <li class="paper-item">
+          <p class="paper-num">Paper I</p>
+          <p class="paper-title">Striking the (im)balance <span class="paper-status published">Published</span></p>
+          <p class="paper-ref">Sigsgaard, M. E. (2024). Striking the (im)balance – a review of the relative prevalence of meta-ethical models in AI journalism research. <em>Journalism</em>. <a href="https://doi.org/10.1177/14648849241303718" target="_blank">doi:10.1177/14648849241303718</a></p>
+          <details>
+            <summary>Abstract</summary>
+            <p class="paper-abstract">A systematic review of the ethical assumptions at work in AI journalism research. The paper finds that the field skews heavily toward negative-utilitarian approaches — focused on identifying and mitigating current harms — while deontological and virtue-ethical perspectives are rarely employed. The consequence is that first-order normative goals often go unstated, making it difficult to move from reactive harm-mitigation to proactive demands on AI developers. The paper argues that drawing on a wider range of ethical models would lead to better technology, better research, and better journalistic practice.</p>
+          </details>
+        </li>
+
+        <li class="paper-item">
+          <p class="paper-num">Paper II</p>
+          <p class="paper-title">Preparing Journalism for Robots: AI Integration through Role Clarity <span class="paper-status diss">Dissertation paper</span></p>
+          <p class="paper-ref">Sigsgaard, M. (2025). Preparing Journalism for Robots: AI Integration through Role Clarity. In <em>Staying in CTRL</em>. University of Southern Denmark.</p>
+          <details>
+            <summary>Abstract</summary>
+            <p class="paper-abstract">Based on fifteen in-depth interviews with employees at TV2, TV2 Fyn, and Jysk Fynske Medier conducted in 2022 — the year ChatGPT launched — this paper examines how AI integration impacts role clarity in newsrooms. Borrowing a phenomenological-hermeneutic methodology from medical research on patients adapting to assistive technology, it traces how role ambiguity emerges from unclear hierarchical relationships to AI systems, improvised learning, and disconnects between stated AI strategies and lived experience. Role clarity — the degree to which job expectations are clearly understood — proves a more tractable and empirically useful lens for studying AI integration than the journalistic identity frameworks that typically dominate the field.</p>
+          </details>
+        </li>
+
+        <li class="paper-item">
+          <p class="paper-num">Paper III</p>
+          <p class="paper-title">Moral "Actors" and "Responsible AI" <span class="paper-status diss">Dissertation paper</span></p>
+          <p class="paper-ref">Sigsgaard, M. (2025). Moral "Actors" and "Responsible AI": How Linguistic Attribution of Human Abilities and Legal Rights to AI Creates a "Techno-Rights Gap". In <em>Staying in CTRL</em>. University of Southern Denmark.</p>
+          <details>
+            <summary>Abstract</summary>
+            <p class="paper-abstract">This paper examines how language in AI policy and law — "responsible AI," "trustworthy AI," AI that "reads" and "learns" — constitutes a series of category mistakes with practical legal consequences. When moral agency is attributed to automated systems, a responsibility gap emerges: something went wrong, it was caused by technology, there is a legitimate demand for accountability, but the technology is not a legitimate target. Meanwhile, AI companies use the same anthropomorphizing language to claim quasi-rights for their systems in copyright disputes, arguing that their models "learn" and are "inspired" just as humans are. The paper coins the term <em>techno-rights gap</em> to describe how AI can be granted rights-adjacent status while its owners evade corresponding obligations — and argues that legislators must pre-empt rather than react if democratic governance is to meaningfully shape AI development.</p>
+          </details>
+        </li>
+
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Other Writing</p>
+      <div class="writing-item">
+        <p class="writing-meta">Folkeskolen · May 2020 · Opinion · In Danish</p>
+        <p class="writing-title"><a href="https://www.folkeskolen.dk/debat/undervisning-i-coronaens-tid/" target="_blank">Undervisning i Coronaens Tid</a></p>
+        <p class="entry-detail">Call for participation in a national teacher survey on remote teaching during COVID-19. Co-authored with researchers from UCPH, AAU, SDU, Via, and KP. Published in <em>Folkeskolen</em>.</p>
+      </div>
+    </section>
+
+  </div><!-- /research -->
+
+  <!-- ══ WORK ══ -->
+  <div id="tab-work" class="tab-panel">
+
+    <section>
+      <p class="section-label">Experience</p>
+      <ul class="entry-list">
+
+        <li class="entry">
+          <span class="entry-year">2022–2025</span>
+          <div>
+            <p class="entry-role">Ph.D. Fellow</p>
+            <p class="entry-where">Digital Democracy Centre · University of Southern Denmark</p>
+            <p class="entry-detail">Embedded research with TV2, JFM, and TV2 Fyn on AI implementation. Co-developed a lead-generation tool using AI summaries of municipal communications to pitch story ideas to journalists — now in active use across all three newsrooms. Taught Political Science at SDU; developed and administered the entrance exam for Denmark's only university journalism degree; co-organized SDU's 2024 Politics Week.</p>
+          </div>
+        </li>
+
+        <li class="entry">
+          <span class="entry-year">2021</span>
+          <div>
+            <p class="entry-role">AI Ethics Consultant</p>
+            <p class="entry-where">Platform Intelligence in News · Danish Innovation Fund</p>
+            <p class="entry-detail">Developed ethical guidelines and empirical compliance criteria for AI and ML systems at a major Danish online news platform. Produced implementation strategies for recommender systems, NLP tools, question answering, and abstract generation technologies.</p>
+          </div>
+        </li>
+
+        <li class="entry">
+          <span class="entry-year">2020</span>
+          <div>
+            <p class="entry-role">AI Research Assistant</p>
+            <p class="entry-where">Centre for Digital Education · University of Copenhagen</p>
+            <p class="entry-detail">Research strategy for an isolated didactics of AI. Central coordination role in the Danish Digital-Didactical Education (3DU) research project across IND/SCIENCE, DPU/AAU, and DKMAT.</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Education</p>
+      <ul class="entry-list">
+        <li class="entry">
+          <span class="entry-year">2022–2025</span>
+          <div>
+            <p class="entry-role">Ph.D. in AI</p>
+            <p class="entry-where">Digital Democracy Centre · University of Southern Denmark</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="entry-year">2017–2019</span>
+          <div>
+            <p class="entry-role">M.A. in Philosophy</p>
+            <p class="entry-where">University of Copenhagen</p>
+            <p class="entry-detail">Bayesian modelling for ethics and decision theory. Research into risk assessment and evidential hierarchies in policy. Associated with the research group on Theoretical Philosophy, AI, and Explainability — working with researchers from computer science, data science, and law on neural network interpretability.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="entry-year">2014–2017</span>
+          <div>
+            <p class="entry-role">B.A. in Philosophy</p>
+            <p class="entry-where">University of Copenhagen &amp; Copenhagen Business School</p>
+            <p class="entry-detail">Electives in digital media strategy, economic decision theory, and data-driven communication.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </div><!-- /work -->
+
+  <!-- ══ READING ══ -->
+  <div id="tab-reading" class="tab-panel">
+
+    <section>
+      <p class="section-label">Currently Reading &amp; Recommended</p>
+
+      <p class="sub-label">Books</p>
+      <ul class="reading-list">
+        <li class="reading-item">
+          <span class="reading-type">reading</span>
+          <div>
+            <p class="reading-title">If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All</p>
+            <p class="reading-meta">Yudkowsky &amp; Soares · Little, Brown and Company · 2025</p>
+          </div>
+        </li>
+        <li class="reading-item">
+          <span class="reading-type">reading</span>
+          <div>
+            <p class="reading-title">Toward Human-Level Artificial Intelligence: How Neuroscience Can Inform the Pursuit of Artificial General Intelligence</p>
+            <p class="reading-meta">Eitan Michael Azoff · CRC Press · 2024</p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="sub-label" style="margin-top:1.4rem;">Articles</p>
+      <ul class="reading-list">
+        <li class="reading-item">
+          <span class="reading-type">article</span>
+          <div>
+            <p class="reading-title"><a href="https://dl.acm.org/doi/10.1145/3442188.3445922" target="_blank">On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜</a></p>
+            <p class="reading-meta">Bender, Gebru, McMillan-Major &amp; Shmitchell · FAccT · 2021</p>
+          </div>
+        </li>
+        <li class="reading-item">
+          <span class="reading-type">article</span>
+          <div>
+            <p class="reading-title"><a href="https://arxiv.org/abs/1706.03762" target="_blank">Attention Is All You Need</a></p>
+            <p class="reading-meta">Vaswani et al. · Google · 2017</p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="sub-label" style="margin-top:1.4rem;">Blogs &amp; Podcasts</p>
+      <ul class="reading-list">
+        <li class="reading-item">
+          <span class="reading-type">blog</span>
+          <div>
+            <p class="reading-title"><a href="https://www.lesswrong.com" target="_blank">LessWrong</a></p>
+            <p class="reading-meta">Community blog on rationality, AI alignment, and epistemics</p>
+          </div>
+        </li>
+        <li class="reading-item">
+          <span class="reading-type">podcast</span>
+          <div>
+            <p class="reading-title"><a href="https://www.dr.dk/lyd/special-radio/prompt-4712131124000" target="_blank">Prompt</a></p>
+            <p class="reading-meta">DR · Danish · AI and technology</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </div><!-- /reading -->
+
+  <!-- ══ CONTACT ══ -->
+  <div id="tab-contact" class="tab-panel">
+
+    <section>
+      <p class="section-label">Talks</p>
+      <p>I give talks on the future of AI — where the technology is heading, what it means for the organisations and industries in its path, and the decisions that will shape how it develops. If you're putting together an event, panel, or programme and think there's a fit, get in touch by email.</p>
+      <a class="talks-btn" style="margin-top:.9rem; display:inline-flex;" href="mailto:malte.sigsgaard@gmail.com">Get in touch →</a>
+    </section>
+
+    <section>
+      <p class="section-label">Work together</p>
+      <p>If you're interested in bringing me on for a project, advisory role, or position, I'd love to hear about it. Send me a message on LinkedIn with some context on what you're working on.</p>
+      <a class="talks-btn" style="margin-top:.9rem; display:inline-flex;" href="https://www.linkedin.com/in/malte-sigsgaard/" target="_blank">Message on LinkedIn →</a>
+    </section>
+
+    <section>
+      <p class="section-label">Find me</p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-key">Email</span>
+          <a href="mailto:malte.sigsgaard@gmail.com">malte.sigsgaard@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-key">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/malte-sigsgaard/" target="_blank">linkedin.com/in/malte-sigsgaard</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-key">Location</span>
+          <span>Copenhagen, Denmark</span>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /contact -->
 
 </div><!-- /page -->
+
+<footer>Malte Sigsgaard · Updated June 2026</footer>
 
 <!-- ── VIDEO MODAL ── -->
 <div class="modal-overlay" id="videoModal" onclick="if(event.target===this)this.classList.remove('open')">
@@ -705,20 +873,59 @@
       </div>
     </div>
     <div class="modal-iframe-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/rTjY5a42sq4"
-        allow="autoplay; fullscreen"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/rTjY5a42sq4" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
   </div>
 </div>
 
 <script>
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.getElementById('videoModal').classList.remove('open');
-    }
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Contact form
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const confirm = document.getElementById('formConfirm');
+      btn.textContent = 'Sending…';
+      btn.style.opacity = '.6';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          btn.style.display = 'none';
+          confirm.classList.add('visible');
+        } else {
+          btn.textContent = 'Try again →';
+          btn.style.opacity = '1';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Try again →';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      }
+    });
+  }
+
+  // Close modal on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.getElementById('videoModal').classList.remove('open');
   });
 </script>
 
